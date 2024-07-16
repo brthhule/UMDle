@@ -1,41 +1,39 @@
 
 
-class Model {
-    constructor(){
-        this.woods = {"name": "Woods", "xCoord": 38.98520825094225, "yCoord": -76.94178927335166}
-        this.maryMount = {"name": "Mary Mount", "xCoord": 38.9851333833028, "yCoord": -76.94086354821499}
-        this.dorchester = {"name": "Dorchester", "xCoord": 38.98684874201056, "yCoord": -76.9461386886941}
-        this.pyonChen = {"name": "Pyon Chen", "xCoord": 38.99217621364386, "yCoord": -76.94490983773476};
-        //all building variables defined
-        this.buildings = [this.woods, this.maryMount, this.dorchester, this.pyonChen];
-        //array of all buildings
-        this.list = [];
-        //list for guesses, ordered closest to furthests
-        this.answer = this.pyonChen;
-        this.guessed = false;
-        //answer building variable stored and if guessed variable stored
-    }
-    
+function Model () {
+    const woods = {"name": "Woods", "xCoord": 38.98520825094225, "yCoord": -76.94178927335166};
+    const maryMount = {"name": "Mary Mount", "xCoord": 38.9851333833028, "yCoord": -76.94086354821499};
+    const dorchester = {"name": "Dorchester", "xCoord": 38.98684874201056, "yCoord": -76.9461386886941};
+    const pyonChen = {"name": "Pyon Chen", "xCoord": 38.99217621364386, "yCoord": -76.94490983773476};
+
+    //all building variables defined
+    const buildings = [this.woods, this.maryMount, this.dorchester, this.pyonChen];
+    //array of all buildings
+    let list = [];
+    //list for guesses, ordered closest to furthests
+    let answer = this.pyonChen;
+    let guessed = false;
+
     function addListItem(text) {
         if (text == answer.name) {
             guessed = true;
             return;
         }
         let inList = false;
-        for (this.i = 0; i < list.length; i++) {
+        for (let i = 0; i < list.length; i++) {
             if (list[i].name == text) {
                 inList = true;
             }
         }
         if (inList == false) {
-            for (this.i = 0; i < buildings.length; i++) {
+            for (let i = 0; i < buildings.length; i++) {
                 if (text == buildings[i].name) {
                     list.push(buildings[i]);
                 }
             }
         }
     }
-    
+
     function calculateDistance(coord1, coord2) {
         const R = 6371e3; 
         const φ1 = coord1.xCoord * Math.PI/180;
@@ -50,7 +48,7 @@ class Model {
     
         return R * c; 
     }
-    
+
     function displayOutput() {
         if (guessed == true) {
             console.log("end game");
@@ -58,7 +56,7 @@ class Model {
         } else {
             document.getElementById('output').textContent = `Closests:`;
             list.sort((a, b) => calculateDistance(a, answer) - calculateDistance(b, answer));
-            for (this.i = 0; i < list.length; i++) {
+            for (let i = 0; i < list.length; i++) {
                 if (i != 0) {
                     document.getElementById('output').textContent += ',';
                 }
@@ -66,21 +64,16 @@ class Model {
             }
         }  
     }
-    
-    function main() {
+
+    function main(input) {
         Model.addListItem(input);
         Model.displayOutput();
     }
-
-    document.getElementById('userForm').addEventListener('submit', function(event) {
-        event.preventDefault();
-        const input = document.getElementById('name').value;
-        Model.main(input);
-    });
-    
 }
 
-export default Model;
+const model = new Model();
+
+export default model;
 
 
 

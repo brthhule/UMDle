@@ -1,15 +1,23 @@
-#container {
+#left-container {
+  float: left;
+  flex: 1;
+}
+
+#right-container {
   overflow: hidden;
-  width: 500px;
   margin-left: 500px;
   border-style: solid;
+  flex: 5;
 }
 
 label {
 }
 
-img {
-  width: 500px;
-  height: auto;
-  border-style: solid;
+#image {
+  width: 100%;
+}
+
+#body {
+  flex: 1;
+  flex-direction: row;
 }
