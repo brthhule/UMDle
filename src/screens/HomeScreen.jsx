@@ -16,17 +16,24 @@ const MainPage = () => {
             <body id="body">
                 <div id="left-container">
                     <h1>UMDle</h1>
-                    <form id="userForm">
-                        <label htmlFor="name">Enter building name here:</label>
-                        <input type="text" id="name" name="name" required/>
-                        <br></br>
-                        <button type="submit" onClick={processClick}>Enter</button>
+                    <form id="user-form">
+                        <div id="input-container">
+                            <label id="input-prompt" htmlFor="name">Enter building name here:  </label>
+                            <input id="input-field" type="text" name="name" required/>
+                        </div>
+                        
+                        <br></br><br></br>
+                        <button id="button" type="submit" onClick={processClick}>Enter</button>
                     </form>
                     <p id="output"></p>
                 </div>
+
+                <div id="guesses">
+                    <p id="guesses-text">Guesses: ...</p>
+                </div>
                 
 
-                <div id="right-container">
+                <div id="bottom-container">
                     <img id="image" src={campus}></img>
                 </div>   
             </body>
