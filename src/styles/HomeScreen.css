@@ -1,13 +1,7 @@
-#left-container {
-  float: left;
-  flex: 1;
-}
-
-#right-container {
+#bottom-container {
+  width: 100%;
   overflow: hidden;
-  margin-left: 500px;
   border-style: solid;
-  flex: 5;
 }
 
 label {
@@ -17,7 +11,31 @@ label {
   width: 100%;
 }
 
-#body {
-  flex: 1;
-  flex-direction: row;
+#input-container {
+  width: 800px;
+  margin-left: calc((100% - 800px) / 2);
+  font-size: xx-large;
+}
+
+#user-form {
+  width: 100%;
+}
+
+#input-field {
+  font-size: xx-large;
+}
+
+#button {
+  font-size: xx-large;
+  width: 200px;
+  margin-left: calc(100%);
+}
+
+#guesses-text {
+  font-size: x-large;
+  font-style: normal;
+}
+
+#guesses {
+  text-align: center;
 }

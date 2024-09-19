@@ -57,30 +57,36 @@ const MainPage = () => {
     }
 
     return (
-        <div id="body">
-            <div id="left-container">
-                <h1>UMDle</h1>
-                <form id="userForm" onSubmit={handleSubmit}>
-                    <label htmlFor="name">Enter building name here:</label>
-                    <input 
-                        type="text" 
-                        id="name" 
-                        name="name" 
-                        value={guess} 
-                        onChange={handleInputChange} 
-                        required 
-                    />
-                    <br />
-                    <button type="submit">Enter</button>
-                </form>
-                <p id="output">Your Guesses:</p>
-                {displayOutput()}
-            </div>
-            <div id="right-container">
-                <img id="image" src={campus} alt="UMD Campus"/>
-            </div>
-        </div>
-    );
-};
+        <>
+            <body id="body">
+                <div id="left-container">
+                    <h1>UMDle</h1>
+                    <form id="user-form">
+                        <div id="input-container">
+                            <label id="input-prompt" htmlFor="name">Enter building name here:  </label>
+                            <input id="input-field" type="text" name="name" required/>
+                        </div>
+                        
+                        <br></br><br></br>
+                        <button id="button" type="submit" onClick={processClick}>Enter</button>
+                    </form>
+                    <p id="output"></p>
+                </div>
+
+                <div id="guesses">
+                    <p id="guesses-text">Guesses: ...</p>
+                </div>
+                
+
+                <div id="bottom-container">
+                    <img id="image" src={campus}></img>
+                </div>   
+            </body>
+
+            
+        </>       
+    )
+}
+
 
 export default MainPage;
