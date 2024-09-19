@@ -37,11 +37,9 @@ const HomeScreen = () => {
                         <div id="input-container">
                             <label id="input-prompt" htmlFor="name">Enter building name here:  </label>
                             <input id="input-field" type="text" name="name" required/>
-                        </div>
-                        
-                        <br></br><br></br>
-                        <button id="button" type="submit" onClick={handleSubmit}>Enter</button>
+                        </div>                        
                     </form>
+                    <button id="button" type="submit" onClick={handleSubmit}>Enter</button>
                     <p id="output"></p>
                 </div>
 

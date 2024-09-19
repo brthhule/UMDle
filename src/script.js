@@ -10,7 +10,7 @@ const buildings = [model.woods, model.maryMount, model.dorchester, model.pyonChe
 
 //array of all buildings
 let list = [];
-let answer = this.pyonChen;
+let answer = model.pyonChen;
 let guessed = false;
 
 model.addListItem = function (text) {
