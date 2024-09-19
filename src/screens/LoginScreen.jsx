@@ -16,7 +16,7 @@ const Welcome = () => {
 
                 <div></div>
                 
-                <Link to="/mainpage">
+                <Link to="/homescreen">
                     <button className="clickable">ENTER</button>
                 </Link>
             </div>

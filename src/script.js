@@ -7,7 +7,7 @@ function Model () {
     const pyonChen = {"name": "Pyon Chen", "xCoord": 38.99217621364386, "yCoord": -76.94490983773476};
 
     //all building variables defined
-    const buildings = [this.woods, this.maryMount, this.dorchester, this.pyonChen];
+    const buildings = [woods, maryMount, dorchester, pyonChen];
     //array of all buildings
     let list = [];
     //list for guesses, ordered closest to furthests
