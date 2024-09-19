@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import campus from '../assets/UMD-campus.jpg';
 import '../styles/HomeScreen.css';
-import model from '../script';
+import Model from '../script';
 
 const HomeScreen = () => {
     const [guess, setGuess] = useState('');
@@ -18,7 +18,7 @@ const HomeScreen = () => {
 
     const addGuess = (newGuess) => {
         setGuesses([...guesses, newGuess]);
-        model.main(newGuess);
+        Model.main(newGuess);
         setGuess(''); // Clear the input field after adding the guess
     };
 
